@@ -1,6 +1,9 @@
-using Assets.Scripts.Levels;
+
+using Assets.Scripts.Models.Levels;
+
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Car : MonoBehaviour {
@@ -9,15 +12,19 @@ public class Car : MonoBehaviour {
 	public float SpeedModifier = 1f;
 	public GameManager GameManager;
 	public float WaitCostScale = 1;
-	public int Id;
+	public int Id = -1;
+	public int CarColorMaterialIndex = -1;
+	public float SpawnChance = 1f;
 
 	private float waitCost = 0;
-	private static int idCounter;
+	private static int idCounter = 0;
 
 	// Start is called before the first frame update
 	public void Start() {
 		var meshRenderer = GetComponentInChildren<MeshRenderer>();
-		meshRenderer.materials[1].color = Color.HSVToRGB(Random.value, 1, .65f);
+		var material = meshRenderer.materials[CarColorMaterialIndex];
+		material.color = Color.HSVToRGB(Random.value, 1, .65f);
+		material.SetFloat("Smoothness", .4f);
 		Id = idCounter++;
 	}
 

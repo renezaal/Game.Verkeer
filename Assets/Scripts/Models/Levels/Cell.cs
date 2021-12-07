@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Levels {
+namespace Assets.Scripts.Models.Levels {
 	public class Cell {
 		public int X => Coordinates.x;
 		public int Y => Coordinates.y;

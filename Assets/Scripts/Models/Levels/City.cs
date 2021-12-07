@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
+
 using UnityEngine;
 
-namespace Assets.Scripts.Levels {
+namespace Assets.Scripts.Models.Levels {
 	public class City {
 		public string Name;
 		public List<CityBlockCell> Cells = new List<CityBlockCell>();

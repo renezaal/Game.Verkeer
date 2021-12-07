@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Levels {
+﻿namespace Assets.Scripts.Models.Levels {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
@@ -7,7 +7,7 @@
 
 	public class Level : LevelBase {
 		public static Level FromBase(LevelBase levelBase) {
-			Level level = new Level();
+			var level = new Level();
 			level.AvailableCityNames.AddRange(levelBase.AvailableCityNames);
 			level.DirectoryPath = levelBase.DirectoryPath;
 			level.Funds = levelBase.Funds;

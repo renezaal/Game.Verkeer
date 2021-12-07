@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 459089458165884685}
   - component: {fileID: 6486972579978836637}
   m_Layer: 0
-  m_Name: Car
+  m_Name: CarSedan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c70784ec068774782ecf10c44ce300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedModifier: 50
+  SpeedModifier: 1.05
   GameManager: {fileID: 0}
-  WaitCostScale: 1
-  Id: 1
+  WaitCostScale: 0.8
+  Id: -1
+  CarColorMaterialIndex: 1
+  SpawnChance: 1
 --- !u!1001 &459089459866588501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,26 +120,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4565273600852900, guid: 949712edd324f6849acf0d36d3ff3082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23828230581550128, guid: 949712edd324f6849acf0d36d3ff3082, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23828230581550128, guid: 949712edd324f6849acf0d36d3ff3082, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23828230581550128, guid: 949712edd324f6849acf0d36d3ff3082, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23828230581550128, guid: 949712edd324f6849acf0d36d3ff3082, type: 3}
-      propertyPath: m_LightProbeUsage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23828230581550128, guid: 949712edd324f6849acf0d36d3ff3082, type: 3}
-      propertyPath: m_ReflectionProbeUsage
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

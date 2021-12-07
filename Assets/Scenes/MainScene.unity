@@ -189,7 +189,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -450,10 +450,15 @@ MonoBehaviour:
   Tree: {fileID: 3493472086176873931, guid: f0f4b8406901bb247bd5d6b6940e56b9, type: 3}
   Cars:
   - {fileID: 6486972579978836637, guid: 09451c8933d19d346b0aca212e622e1e, type: 3}
+  - {fileID: 7125414023599038590, guid: 031d9ea253867dd4a87b9c944306b23d, type: 3}
+  - {fileID: 3275335572115163963, guid: a8654b314071512469385c5e88cc8ecc, type: 3}
+  - {fileID: 8047827826988642528, guid: 159ec219e2ac6b54e880f3b0f8469cfd, type: 3}
+  - {fileID: 5917679616954142932, guid: 26276843b26052749a5ef0e1f6a1b248, type: 3}
   TileContainer: {fileID: 1226352747}
   ActorContainer: {fileID: 383652031}
   CarSpawnIntervalSeconds: 0.2
-  AlternativeRouteFindingAggressiveness: 5
+  AlternativeRouteFindingAggressiveness: 1
+  BaseCarSpeed: 50
 --- !u!4 &1897714780
 Transform:
   m_ObjectHideFlags: 0

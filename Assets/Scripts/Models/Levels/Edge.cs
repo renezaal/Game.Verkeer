@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Levels {
+﻿
+
+namespace Assets.Scripts.Models.Levels {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;

@@ -1,5 +1,6 @@
 using Assets.Scripts.Extensions;
-using Assets.Scripts.Levels;
+using Assets.Scripts.Models;
+using Assets.Scripts.Models.Levels;
 
 using System.Collections;
 using System.Collections.Generic;
@@ -26,15 +27,19 @@ public class GameManager : MonoBehaviour {
 
 	public float CarSpawnIntervalSeconds = 2f;
 	public float AlternativeRouteFindingAggressiveness = 1f;
+	public float BaseCarSpeed = 50f;
+	public Range CarSpeedVariance = new(){ Minimum = .9f, Maximum = 1.2f };
 
 	private List<LevelBase> levels;
 	private Level level;
 	private float lastCarSpawnTime = 0;
 	private Camera mainCamera;
+	private List<(float spawnChance, Car carPrefab)> carSpawnChances;
 
 	// Start is called before the first frame update
-	void Start() {
+	public void Start() {
 		this.mainCamera = Camera.main;
+		this.carSpawnChances = this.Cars.Select(car => (car.SpawnChance, car)).ToList();
 
 		// Get the levels available.
 		this.levels = LevelManager.GetLevels();
@@ -84,7 +89,7 @@ public class GameManager : MonoBehaviour {
 				bool east = cell.East  is PathCell;
 				bool south = cell.South is PathCell;
 				bool west = cell.West  is PathCell;
-				
+
 				if(!north &&  east &&  south &&  west) {
 					prefab = this.RoadTJunction;
 					rotateDegrees = 90;
@@ -159,6 +164,7 @@ public class GameManager : MonoBehaviour {
 
 	private Task pathCalculationTask = Task.CompletedTask;
 	private ulong ticks = 0;
+
 	public void FixedUpdate() {
 		ticks++;
 		if((this.lastCarSpawnTime + this.CarSpawnIntervalSeconds) < Time.fixedTime) {
@@ -175,11 +181,13 @@ public class GameManager : MonoBehaviour {
 
 			if(spawnVertices.Count > 0) {
 				Vertex spawn = spawnVertices[Random.Range(0, spawnVertices.Count)];
-				Car prefab = this.Cars[Random.Range(0, this.Cars.Length)];
+				Car prefab = Randomization.GetRandom(this.carSpawnChances);
 				var instance = Instantiate(prefab, spawn.Position, Quaternion.identity, this.ActorContainer);
+				instance.SpeedModifier *= this.CarSpeedVariance.GetRandomInRange() * this.BaseCarSpeed;
+
 				instance.TargetCity = targetCity;
 				instance.CurrentVertex = spawn;
-				instance.WaitCostScale = this.AlternativeRouteFindingAggressiveness;
+				instance.WaitCostScale *= this.AlternativeRouteFindingAggressiveness;
 				instance.GameManager = this;
 				spawn.Occupant = instance;
 
@@ -251,17 +259,17 @@ public class GameManager : MonoBehaviour {
 		 */
 	}
 
-	HashSet<PathCell> cellsMarkedForDelete = new HashSet<PathCell>();
-	HashSet<PathCell> cellsMarkedForPathCostUpdate = new HashSet<PathCell>();
+	readonly HashSet<PathCell> cellsMarkedForDelete = new HashSet<PathCell>();
+	readonly HashSet<PathCell> cellsMarkedForPathCostUpdate = new HashSet<PathCell>();
 	// Update is called once per frame
-	void Update() {
+	public void Update() {
 		if(Input.GetMouseButtonDown(0)) {
 			Cell cell = null;
 			if(this.mainCamera.orthographic) {
 				cell = GetCell(this.mainCamera.ScreenToWorldPoint(Input.mousePosition));
 			} else {
 				var ray = this.mainCamera.ScreenPointToRay(Input.mousePosition);
-				if(Physics.Raycast(ray,out RaycastHit hit)) {
+				if(Physics.Raycast(ray, out RaycastHit hit)) {
 					cell = GetCell(hit.point);
 				}
 			}

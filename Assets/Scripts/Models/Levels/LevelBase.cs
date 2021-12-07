@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 
-namespace Assets.Scripts.Levels {
+namespace Assets.Scripts.Models.Levels {
 	public class LevelBase {
 
 		/// <summary>

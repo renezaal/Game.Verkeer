@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Levels {
+﻿namespace Assets.Scripts.Models.Levels {
 	public enum CityBlockType {
 		Housing,
 		Industry,
