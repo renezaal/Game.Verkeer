@@ -1,0 +1,5 @@
+{
+    "Name" : "Demo",
+    "Funds" : 100,
+    "AvailableCityNames" : ["Lelystad", "Haarlem", "Almere", "Groningen", "Eindhoven", "Amsterdam", "Utrecht", "Den Haag", "Hilversum", "Almelo"]
+}

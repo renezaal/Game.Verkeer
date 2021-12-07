@@ -1,0 +1,504 @@
+fileFormatVersion: 2
+guid: 04b3587178cf4b34a8784391d316e9b6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: car.farara
+    100002: car.micro
+    100004: car.mpv
+    100006: car.normal
+    100008: car.station
+    100010: Cylinder.000
+    100012: Cylinder.stamp
+    100014: gas-station
+    100016: hill-ramp
+    100018: house-country
+    100020: house-hill-normal
+    100022: house-hill-small
+    100024: house-luxurious
+    100026: house-mid
+    100028: house-modern
+    100030: house-small
+    100032: house-small-carport-left
+    100034: house-small-carport-right
+    100036: house-small-garage
+    100038: house-small.2
+    100040: Lamp
+    100042: PRINT-house-small-carport-right
+    100044: PRINT-house-small-carport-right.001
+    100046: PRINT-house-small-carport-right.002
+    100048: PRINT-house-small-carport-right.003
+    100050: PRINT-house-small-carport-right.004
+    100052: PRINT-house-small-carport-right.005
+    100054: //RootNode
+    100056: road-straight-house-1-low
+    100058: road-straight-house-2-low
+    100060: the eye
+    100062: tree-round
+    100064: tree-round.001
+    100066: tree-round.002
+    100068: tree-round.003
+    100070: tree-round.004
+    100072: tree-round.005
+    100074: tree-round.006
+    100076: tree-round.007
+    400000: car.farara
+    400002: car.micro
+    400004: car.mpv
+    400006: car.normal
+    400008: car.station
+    400010: Cylinder.000
+    400012: Cylinder.stamp
+    400014: gas-station
+    400016: hill-ramp
+    400018: house-country
+    400020: house-hill-normal
+    400022: house-hill-small
+    400024: house-luxurious
+    400026: house-mid
+    400028: house-modern
+    400030: house-small
+    400032: house-small-carport-left
+    400034: house-small-carport-right
+    400036: house-small-garage
+    400038: house-small.2
+    400040: Lamp
+    400042: PRINT-house-small-carport-right
+    400044: PRINT-house-small-carport-right.001
+    400046: PRINT-house-small-carport-right.002
+    400048: PRINT-house-small-carport-right.003
+    400050: PRINT-house-small-carport-right.004
+    400052: PRINT-house-small-carport-right.005
+    400054: //RootNode
+    400056: road-straight-house-1-low
+    400058: road-straight-house-2-low
+    400060: the eye
+    400062: tree-round
+    400064: tree-round.001
+    400066: tree-round.002
+    400068: tree-round.003
+    400070: tree-round.004
+    400072: tree-round.005
+    400074: tree-round.006
+    400076: tree-round.007
+    2000000: the eye
+    2100000: basecolors
+    2100002: carmaterial_orange
+    2100004: No Name
+    2100006: base_trees
+    2100008: tires
+    2100010: carmaterial_red
+    2100012: lights.orange
+    2100014: metal
+    2100016: lights
+    2100018: windows
+    2100020: lights.red
+    2100022: lights.orange.001
+    2100024: lights.red.001
+    2100026: tires.001
+    2100028: carmaterial_violet
+    2100030: metal.001
+    2100032: lights.001
+    2100034: windows.001
+    2100036: lights.red.002
+    2100038: lights.orange.002
+    2100040: lights.002
+    2100042: red.gloss
+    2100044: tires.002
+    2100046: metal.002
+    2100048: windows.002
+    2100050: lights.orange.003
+    2100052: tires.003
+    2100054: metal.003
+    2100056: lights.003
+    2100058: windows.003
+    2100060: lights.red.003
+    2100062: lights.orange.004
+    2100064: lights.red.004
+    2100066: tires.004
+    2100068: carmaterial_blue
+    2100070: metal.004
+    2100072: lights.004
+    2100074: windows.004
+    2300000: car.farara
+    2300002: car.micro
+    2300004: car.mpv
+    2300006: car.normal
+    2300008: car.station
+    2300010: Cylinder.000
+    2300012: Cylinder.stamp
+    2300014: gas-station
+    2300016: hill-ramp
+    2300018: house-country
+    2300020: house-hill-normal
+    2300022: house-hill-small
+    2300024: house-luxurious
+    2300026: house-mid
+    2300028: house-modern
+    2300030: house-small
+    2300032: house-small-carport-left
+    2300034: house-small-carport-right
+    2300036: house-small-garage
+    2300038: house-small.2
+    2300040: PRINT-house-small-carport-right
+    2300042: PRINT-house-small-carport-right.001
+    2300044: PRINT-house-small-carport-right.002
+    2300046: PRINT-house-small-carport-right.003
+    2300048: PRINT-house-small-carport-right.004
+    2300050: PRINT-house-small-carport-right.005
+    2300052: road-straight-house-1-low
+    2300054: road-straight-house-2-low
+    2300056: tree-round
+    2300058: tree-round.001
+    2300060: tree-round.002
+    2300062: tree-round.003
+    2300064: tree-round.004
+    2300066: tree-round.005
+    2300068: tree-round.006
+    2300070: tree-round.007
+    3300000: car.farara
+    3300002: car.micro
+    3300004: car.mpv
+    3300006: car.normal
+    3300008: car.station
+    3300010: Cylinder.000
+    3300012: Cylinder.stamp
+    3300014: gas-station
+    3300016: hill-ramp
+    3300018: house-country
+    3300020: house-hill-normal
+    3300022: house-hill-small
+    3300024: house-luxurious
+    3300026: house-mid
+    3300028: house-modern
+    3300030: house-small
+    3300032: house-small-carport-left
+    3300034: house-small-carport-right
+    3300036: house-small-garage
+    3300038: house-small.2
+    3300040: PRINT-house-small-carport-right
+    3300042: PRINT-house-small-carport-right.001
+    3300044: PRINT-house-small-carport-right.002
+    3300046: PRINT-house-small-carport-right.003
+    3300048: PRINT-house-small-carport-right.004
+    3300050: PRINT-house-small-carport-right.005
+    3300052: road-straight-house-1-low
+    3300054: road-straight-house-2-low
+    3300056: tree-round
+    3300058: tree-round.001
+    3300060: tree-round.002
+    3300062: tree-round.003
+    3300064: tree-round.004
+    3300066: tree-round.005
+    3300068: tree-round.006
+    3300070: tree-round.007
+    4300000: house-small-carport-left
+    4300002: gas-station
+    4300004: road-straight-house-1-low
+    4300006: house-modern
+    4300008: house-country
+    4300010: house-small-carport-right
+    4300012: house-hill-small
+    4300014: house-hill-normal
+    4300016: PRINT-house-small-carport-right.005
+    4300018: PRINT-house-small-carport-right.004
+    4300020: PRINT-house-small-carport-right.003
+    4300022: PRINT-house-small-carport-right.002
+    4300024: PRINT-house-small-carport-right.001
+    4300026: Cylinder.000
+    4300028: Cylinder.stamp
+    4300030: PRINT-house-small-carport-right
+    4300032: tree-round.007
+    4300034: tree-round.006
+    4300036: tree-round.005
+    4300038: tree-round.004
+    4300040: tree-round.003
+    4300042: tree-round.002
+    4300044: tree-round.001
+    4300046: road-straight-house-2-low
+    4300048: house-luxurious
+    4300050: house-small.2
+    4300052: house-mid
+    4300054: house-small-garage
+    4300056: house-small
+    4300058: car.normal
+    4300060: car.station
+    4300062: tree-round
+    4300064: car.farara
+    4300066: car.mpv
+    4300068: car.micro
+    4300070: hill-ramp
+    10800000: Lamp
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 02dc6a05dae53324787aab5eb95deb59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base_trees
+    second: {fileID: 2100000, guid: 02dc6a05dae53324787aab5eb95deb59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: basecolors
+    second: {fileID: 2100000, guid: 02dc6a05dae53324787aab5eb95deb59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carmaterial_blue
+    second: {fileID: 2100000, guid: 7b85a725237e15a47838d85246756996, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carmaterial_orange
+    second: {fileID: 2100000, guid: 48d8c99725ad01e4ab2547d056061fdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carmaterial_red
+    second: {fileID: 2100000, guid: 2469233017903454c97a78a43de47633, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carmaterial_violet
+    second: {fileID: 2100000, guid: 754751800d420c4419b807c400ded3a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights
+    second: {fileID: 2100000, guid: 314c8b8d7f72d584e96627e9c6e31b55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.001
+    second: {fileID: 2100000, guid: 7aa698ef47a4b964e8d3bd615543ae83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.002
+    second: {fileID: 2100000, guid: f135d1f092187fb478ff7d59592fdaa5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.003
+    second: {fileID: 2100000, guid: ca16351046162d24d879f19db8b64c48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.004
+    second: {fileID: 2100000, guid: 77b386505059c10418cd0480955fb422, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.orange
+    second: {fileID: 2100000, guid: d42a1c8bf6435f1409efd9a7d5196d83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.orange.001
+    second: {fileID: 2100000, guid: 906609029bc8a5341b630a5a79b4c93d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.orange.002
+    second: {fileID: 2100000, guid: 6a1c5e414aa721340b38609e385d7bf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.orange.003
+    second: {fileID: 2100000, guid: 7fd25d2d83f48834d80b748d1e1222bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.orange.004
+    second: {fileID: 2100000, guid: 4ee62b70bc3629f4d9299b38706b39f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.red
+    second: {fileID: 2100000, guid: bb3d26a720257e049b943b9bb46193ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.red.001
+    second: {fileID: 2100000, guid: 764643a308d586243a111b30005d1103, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.red.002
+    second: {fileID: 2100000, guid: 140bc160782ec3e48b6a894884afccf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.red.003
+    second: {fileID: 2100000, guid: 0ea17257eee62f041be532756bcae4c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights.red.004
+    second: {fileID: 2100000, guid: 17ba38139a59bd141bea08ce4fa4422c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 2588d717cc7701e478b1a808fe59e91e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.001
+    second: {fileID: 2100000, guid: ec4e2db640cf7584593d6555465cd4ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.002
+    second: {fileID: 2100000, guid: b872f0b530eff214b942ee1e02bb9ddd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.003
+    second: {fileID: 2100000, guid: 9108f26d45c3eff4da541f2fe4245a9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.004
+    second: {fileID: 2100000, guid: 886ec666253452b43b7c85b17334b20f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red.gloss
+    second: {fileID: 2100000, guid: 996e1a60e03fcc34a8af68d33cdf0002, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tires
+    second: {fileID: 2100000, guid: bcbfeb6ca3edb8242a0d47d3a8fe26a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tires.001
+    second: {fileID: 2100000, guid: 8e454c7045be258479b21c460539931e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tires.002
+    second: {fileID: 2100000, guid: 2c1e130cb91146045b42bf597bf8c38e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tires.003
+    second: {fileID: 2100000, guid: eb8d774784f00e74b8f09f0ee00989ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tires.004
+    second: {fileID: 2100000, guid: 1478fe290f7a58b40bd41fd62fb13282, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windows
+    second: {fileID: 2100000, guid: 5d2fe343ddef37c4ab9a055da3b2c290, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windows.001
+    second: {fileID: 2100000, guid: 88664f1c0ae46b1409524db483f2f516, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windows.002
+    second: {fileID: 2100000, guid: 756864852b91c604c8700ed643865740, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windows.003
+    second: {fileID: 2100000, guid: e65e98ea31187ff4a953a4cf159001b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windows.004
+    second: {fileID: 2100000, guid: 196707899701d9443a3414a73780a676, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
