@@ -7,5 +7,7 @@ namespace Assets.Scripts.Levels {
 		public List<CityBlockCell> Cells = new List<CityBlockCell>();
 		public int Size => Cells.Count;
 		public Vector2 Center;
+
+		override public string ToString() => this.Name;
 	}
 }

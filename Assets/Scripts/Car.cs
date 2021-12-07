@@ -6,11 +6,10 @@ using UnityEngine;
 public class Car : MonoBehaviour {
 	public City TargetCity;
 	public Vertex CurrentVertex;
-	public Edge CurrentEdge;
 	public float SpeedModifier = 1f;
 	public GameManager GameManager;
 	public float WaitCostScale = 1;
-	public int Id = idCounter++;
+	public int Id;
 
 	private float waitCost = 0;
 	private static int idCounter;
@@ -19,10 +18,16 @@ public class Car : MonoBehaviour {
 	public void Start() {
 		var meshRenderer = GetComponentInChildren<MeshRenderer>();
 		meshRenderer.materials[1].color = Color.HSVToRGB(Random.value, 1, .65f);
+		Id = idCounter++;
 	}
 
 	// Update is called once per frame
 	public void Update() {
+
+		// Lerp based on cell maxSpeed.
+		this.transform.LookAt(CurrentVertex.Position, Vector3.back);
+		this.transform.position = Vector3.MoveTowards(this.transform.position, CurrentVertex.Position, SpeedModifier * GetCurrentCell().MaxSpeed * Time.deltaTime);
+
 		// Do something if we're close enough to our partial destination.
 		if(Vector3.Distance(transform.position, CurrentVertex.Position) < .01f) {
 
@@ -33,7 +38,7 @@ public class Car : MonoBehaviour {
 				return;
 			}
 
-			waitCost+=WaitCostScale;
+			waitCost += WaitCostScale;
 			var selectedVertex = CurrentVertex;
 			float selectedVertexCost = CurrentVertex.PathCosts[TargetCity] + waitCost;
 			foreach(var connection in CurrentVertex.Connections) {
@@ -54,10 +59,6 @@ public class Car : MonoBehaviour {
 				CurrentVertex = selectedVertex;
 			}
 		}
-
-		// Lerp based on cell maxSpeed.
-		this.transform.LookAt(CurrentVertex.Position,Vector3.back);
-		this.transform.position = Vector3.MoveTowards(this.transform.position, CurrentVertex.Position, SpeedModifier * GetCurrentCell().MaxSpeed * Time.deltaTime);
 	}
 
 	private PathCell GetCurrentCell() {

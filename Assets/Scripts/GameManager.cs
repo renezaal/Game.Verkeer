@@ -1,10 +1,12 @@
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Levels;
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -24,15 +26,16 @@ public class GameManager : MonoBehaviour {
 
 	public float CarSpawnIntervalSeconds = 2f;
 	public float AlternativeRouteFindingAggressiveness = 1f;
-	public float CameraSpeed = 1f;
-	public float CameraZoomSpeed = 1f;
 
 	private List<LevelBase> levels;
 	private Level level;
 	private float lastCarSpawnTime = 0;
+	private Camera mainCamera;
 
 	// Start is called before the first frame update
 	void Start() {
+		this.mainCamera = Camera.main;
+
 		// Get the levels available.
 		this.levels = LevelManager.GetLevels();
 
@@ -81,7 +84,7 @@ public class GameManager : MonoBehaviour {
 				bool east = cell.East  is PathCell;
 				bool south = cell.South is PathCell;
 				bool west = cell.West  is PathCell;
-
+				
 				if(!north &&  east &&  south &&  west) {
 					prefab = this.RoadTJunction;
 					rotateDegrees = 90;
@@ -186,7 +189,8 @@ public class GameManager : MonoBehaviour {
 
 		if(pathCalculationTask.IsCompleted) {
 			if(cellsMarkedForPathCostUpdate.Count == 0) {
-				foreach(var cell in cellsMarkedForDelete) {
+				List<PathCell> cellsToDelete = new List<PathCell>(cellsMarkedForDelete);
+				foreach(var cell in cellsToDelete) {
 					// If the cell has no occupants, proceed to delete.
 					if(!cell.Vertices.Any(v => v.Occupant != null)) {
 						// Clean up vertices.
@@ -252,7 +256,15 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		if(Input.GetMouseButtonDown(0)) {
-			Cell cell = GetCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+			Cell cell = null;
+			if(this.mainCamera.orthographic) {
+				cell = GetCell(this.mainCamera.ScreenToWorldPoint(Input.mousePosition));
+			} else {
+				var ray = this.mainCamera.ScreenPointToRay(Input.mousePosition);
+				if(Physics.Raycast(ray,out RaycastHit hit)) {
+					cell = GetCell(hit.point);
+				}
+			}
 			if(cell is PathCell pathCell) {
 				if(cellsMarkedForDelete.Add(pathCell)) {
 					cell.Tile.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
@@ -266,11 +278,5 @@ public class GameManager : MonoBehaviour {
 				}
 			}
 		}
-
-
-
-		Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Time.deltaTime * this.CameraSpeed * Camera.main.orthographicSize;
-		Camera.main.transform.Translate(inputVector);
-		Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize * (1 - Input.mouseScrollDelta.y * CameraZoomSpeed), 5, 30);
 	}
 }

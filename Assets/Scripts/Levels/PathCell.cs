@@ -7,7 +7,7 @@
 	using UnityEngine;
 
 	public class PathCell : Cell {
-		public const float SidePadding = .3f;
+		public const float SidePadding = .4f;
 		private readonly static Vector2 middleOffset = new(.5f, .5f);
 		private readonly static Vector2 NeOffset = new(1-SidePadding, 1-SidePadding);
 		private readonly static Vector2 SeOffset = new(1-SidePadding, SidePadding);
@@ -26,6 +26,10 @@
 
 		public Vertex[] Vertices;
 
+		/// <summary>
+		/// Speed in units per second.
+		/// One unit is 1km in this context.
+		/// </summary>
 		public float MaxSpeed;
 
 		public Vertex VertexNE => Vertices[0];

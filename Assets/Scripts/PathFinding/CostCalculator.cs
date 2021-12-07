@@ -114,7 +114,7 @@
 		/// <param name="getCost">Getter for the cost of traversing the edge.</param>
 		/// <returns>A list of all reachable vertices with their associated path costs.</returns>
 		public static IEnumerable<(TVertex vertex, float pathCost)> CalculatePathCosts<TVertex, TEdge>(
-			TVertex fromVertex,
+			IEnumerable<(TVertex vertex, float cost)> presetCosts,
 			GetEdges<TVertex, TEdge> getEdges,
 			EdgeFromGetter<TVertex, TEdge> edgeFrom,
 			EdgeToGetter<TVertex, TEdge> edgeTo,
@@ -124,8 +124,10 @@
 			Dictionary<TVertex, float> pathCosts = new Dictionary<TVertex, float>();
 
 			Queue<TVertex> queue = new Queue<TVertex>();
-			queue.Enqueue(fromVertex);
-			pathCosts[fromVertex] = 0;
+			foreach(var preset in presetCosts) {
+				queue.Enqueue(preset.vertex);
+				pathCosts[preset.vertex] = preset.cost;
+			}
 
 			return calculateCostsCore(null, getEdges, edgeFrom, edgeTo, edgeIsDirectional, getCost, pathCosts, queue);
 		}
@@ -144,14 +146,14 @@
 		/// <param name="getCost">Getter for the cost of traversing the edge.</param>
 		/// <returns>A list of all reachable vertices with their associated path costs.</returns>
 		public static IEnumerable<(TVertex vertex, float pathCost)> CalculateReversePathCosts<TVertex, TEdge>(
-			TVertex toVertex,
+			IEnumerable<(TVertex vertex, float cost)> presetCosts,
 			GetEdges<TVertex, TEdge> getEdges,
 			EdgeFromGetter<TVertex, TEdge> edgeFrom,
 			EdgeToGetter<TVertex, TEdge> edgeTo,
 			EdgeIsDirectionalGetter<TEdge> edgeIsDirectional,
 			EdgeCostGetter<TEdge> getCost) {
 
-			return CalculatePathCosts(toVertex, getEdges, (e) => edgeTo(e), (e) => edgeFrom(e), edgeIsDirectional, getCost);
+			return CalculatePathCosts(presetCosts, getEdges, (e) => edgeTo(e), (e) => edgeFrom(e), edgeIsDirectional, getCost);
 		}
 
 		public delegate float CurrentPathCostGetter<TVertex>(TVertex vertex);

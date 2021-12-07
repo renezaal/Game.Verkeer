@@ -195,17 +195,17 @@
 
 
 			foreach(var city in level.Cities) {
-				Vertex vertex = city.Cells.First().VertexNW;
+				var vertices = city.Cells.SelectMany(cell=>cell.Vertices);
 
 				// We calculate the reverse route, so for each vertex we look at the incoming connections.
 				// The "from-to" terminology may get confusing here because of searching in the reverse direction.
 				var costs = CostCalculator.CalculateReversePathCosts(
-					vertex,
+					vertices.Select(v=>(v,0f)),
 					v => v.Connections,
 					e => e.from,
 					e => e.to,
 					e => e.Directional,
-					e => (e.to.ContainingCell as CityBlockCell)?.OfCity == city ? 0f : e.cost);
+					e => e.cost);
 
 				// Apply the path cost to this city for each reachable vertex.
 				foreach(var vertexPathCost in costs) {
@@ -242,7 +242,7 @@
 			}
 
 			stopwatch.Stop();
-			UnityEngine.Debug.Log($"Recalculating paths took {stopwatch.ElapsedMilliseconds}ms");
+			Debug.Log($"Recalculating paths took {stopwatch.ElapsedMilliseconds}ms");
 		}
 	}
 }

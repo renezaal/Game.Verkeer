@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c70784ec068774782ecf10c44ce300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedModifier: 100
+  SpeedModifier: 50
   GameManager: {fileID: 0}
   WaitCostScale: 1
   Id: 1
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1523459977119830, guid: 949712edd324f6849acf0d36d3ff3082, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 126
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4565273600852900, guid: 949712edd324f6849acf0d36d3ff3082, type: 3}
       propertyPath: m_RootOrder
